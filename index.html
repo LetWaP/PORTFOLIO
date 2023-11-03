@@ -38,15 +38,52 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam maiores exercitationem doloribus, eveniet delectus dicta? Alias veniam omnis soluta id distinctio modi quidem possimus voluptatum eligendi, nostrum repellendus quis?</p> 
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>Maintenance</span><br>Use of hand-held machinery</li>
+                        <li><span>Networks</span><br>Local network assembly</li>
+                        <li><span>S.O</span><br>Operating system installations</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <li><span>2021</span><br>Olive harvesting</li>
+                        <li><span>2022 - Actuality</span><br>Camacho Recycling</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>2019/2021</span><br>E.S.O</li>
+                        <li><span>2019/2021</span><br>FPB Electricity and machining</li>
+                        <li><span>2022/2024</span><br>FPGM Microcomputer systems and networks</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 
 </body>
 </html>
